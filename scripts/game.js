@@ -3,6 +3,9 @@ class Game {
     this.canvas = canvas;
     this.context = this.canvas.getContext('2d');
     this.background = new Background(this);
+    this.ball = new Ball(this);
+    this.keeper = new Keeper(this);
+    this.arrow = new Arrow(this);
     this.timer=0;
     this.SPEED=300;
     };
@@ -18,9 +21,16 @@ class Game {
     }
     update(){
       this.paint();
+      // this.image();
     }
     paint(){
       this.background.paint();
+      this.ball.paint();
+      this.keeper.paint();
+      this.arrow.paint();
     }
+    // image(){
+    //   this.ball.image();
+    // }
   }
  
