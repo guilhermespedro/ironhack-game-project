@@ -15,7 +15,7 @@ class Game {
       right: this.arrow.isMovingRight
     }
     this.control = new Control(this.callbacks);
-    this.control.setKeyBindings();
+    // this.control.setKeyBindings();
     };
     start () {
       this.loop(0);
