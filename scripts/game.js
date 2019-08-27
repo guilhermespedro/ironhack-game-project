@@ -4,8 +4,6 @@ class Game {
     this.context = this.canvas.getContext('2d');
     this.width = this.canvas.width;
     this.heigth = this.canvas.heigth;
-
-    // this.canvas.height = canvas.height;
     this.background = new Background(this);
     this.ball = new Ball(this);
     this.keeper = new Keeper(this);

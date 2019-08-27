@@ -37,14 +37,19 @@ class Arrow {
     context.lineTo(410, 470);
     context.stroke();
     context.fill();
+    context.restore();
+
     // context.translate(150, 75);
     // context.rotate(Math.PI / 2);
     // context.translate(-150, -75);
     // context.closePath();
   }
   update() {
-    if(this.isMovingLeft) this.angle-= 0.05;
-    if(this.isMovingRight) this.angle+= 0.05;
+    // console.log("DEBUG update arrow")
+    if(this.isMovingLeft) {
+      console.log("DEBUG moving left")
+      this.angle-= 0.02};
+    if(this.isMovingRight) this.angle+= 0.02;
     // console.log("arrow update", this.angle)
   }
 }

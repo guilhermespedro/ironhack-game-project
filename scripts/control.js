@@ -8,11 +8,11 @@ class Control {
     window.addEventListener('keydown', event => {
       event.preventDefault();
       if (event.keyCode === 37) {
-        this.callbacks.isMovingLeft = true
+        this.isMovingLeft = true
         console.log("turn left");
       }
       if (event.keyCode === 39) {
-        this.callbacks.isMovingRight = true 
+        this.isMovingRight = true 
 
         console.log("turn right");
       }
@@ -23,23 +23,23 @@ class Control {
     });
     window.addEventListener('keyup', event => {
       if (event.keyCode === 37) {
-        this.callbacks.isMovingLeft = false
+        this.isMovingLeft = false
         console.log('stop moving');
       }
       if (event.keyCode === 39) {
-        this.callbacks.isMovingRight = false
+        this.isMovingRight = false
         console.log('stop moving');
       }
       if (event.keyCode === 32) {
-        this.callbacks.stop = false
+        this.stop = false
         console.log('stop shooting');
       }
       
     });
   }
   update() {
-    if(this.isMovingLeft) this.angle-= 0.05;
-    if(this.isMovingRight) this.angle+= 0.05;
+    if(this.isMovingLeft) this.angle-= 0.02;
+    if(this.isMovingRight) this.angle+= 0.02;
     // console.log("arrow update", this.angle)
   }
 }
