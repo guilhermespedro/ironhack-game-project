@@ -1,9 +1,24 @@
 class Arrow {
   constructor(game) {
     this.game = game;
+    this.SHOOTER_SIZE = -470;
+    const MAX_TOP_SIZE = 400;
+    this.width = this.game.canvas.width;
+    this.heigth = this.game.canvas.heigth;
+    this.bottomX = 0;
+    this.bottomY = 0;
+    this.angle = 0;
+    this.movementDirection = 1;
+    this.isMovingLeft = false;
+    this.isMovingRight = false;
+    this.topX = this.bottomX;
+    this.topY = this.SHOOTER_SIZE;
   }
   paint() {
     const context = this.game.context;
+    context.save();
+    context.translate(this.width / 2, this.height);
+    context.rotate(this.angle);
     context.beginPath();
     context.moveTo(410, 470);
     context.lineTo(390, 470);
@@ -25,6 +40,11 @@ class Arrow {
     // context.translate(150, 75);
     // context.rotate(Math.PI / 2);
     // context.translate(-150, -75);
-    context.closePath();
+    // context.closePath();
+  }
+  update() {
+    if(this.isMovingLeft) this.angle-= 0.05;
+    if(this.isMovingRight) this.angle+= 0.05;
+    // console.log("arrow update", this.angle)
   }
 }
