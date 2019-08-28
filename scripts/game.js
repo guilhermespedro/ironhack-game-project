@@ -5,9 +5,9 @@ class Game {
     this.width = this.canvas.width;
     this.heigth = this.canvas.heigth;
     this.background = new Background(this);
-    this.ball = new Ball(this);
-    this.keeper = new Keeper(this);
     this.arrow = new Arrow(this);
+    this.ball = new Ball(this,this.arrow);
+    this.keeper = new Keeper(this);
     this.timer=0;
     this.SPEED=300;
     this.callbacks = {
@@ -15,6 +15,7 @@ class Game {
       right: this.arrow.isMovingRight
     }
     this.control = new Control(this.callbacks);
+    const BALL_SPEED = 30;
     // this.control.setKeyBindings();
     };
     start () {
@@ -31,6 +32,8 @@ class Game {
       this.paint();
       this.arrow.update();
       this.control.update();
+      this.ball.update();
+      
       // this.image();
     }
     paint(){

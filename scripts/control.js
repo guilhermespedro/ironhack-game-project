@@ -41,6 +41,6 @@ class Control {
     // if(this.isMovingLeft) this.angle-= 0.02;
     // if(this.isMovingRight) this.angle+= 0.02;
 
-    console.log("arrow update", this.angle)
+    // console.log("arrow update", this.angle)
   }
 }

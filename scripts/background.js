@@ -91,47 +91,47 @@ class Background {
 
 // Possible goals
 
-    context.beginPath();
-    context.arc(185, 100, 15, 0, Math.PI * 2);
-    context.lineWidth = 3;
-    context.strokeStyle = "red"; // !
-    context.stroke();
-    context.closePath();
+    // context.beginPath();
+    // context.arc(185, 100, 15, 0, Math.PI * 2);
+    // context.lineWidth = 3;
+    // context.strokeStyle = "red"; // !
+    // context.stroke();
+    // context.closePath();
 
-    context.beginPath();
-    context.arc(600, 100, 15, 0, Math.PI * 2);
-    context.lineWidth = 3;
-    context.strokeStyle = "red"; // !
-    context.stroke();
-    context.closePath();
+    // context.beginPath();
+    // context.arc(600, 100, 15, 0, Math.PI * 2);
+    // context.lineWidth = 3;
+    // context.strokeStyle = "red"; // !
+    // context.stroke();
+    // context.closePath();
 
-    context.beginPath();
-    context.arc(600, 200, 15, 0, Math.PI * 2);
-    context.lineWidth = 3;
-    context.strokeStyle = "red"; // !
-    context.stroke();
-    context.closePath();
+    // context.beginPath();
+    // context.arc(600, 200, 15, 0, Math.PI * 2);
+    // context.lineWidth = 3;
+    // context.strokeStyle = "red"; // !
+    // context.stroke();
+    // context.closePath();
     
-    context.beginPath();
-    context.arc(185, 200, 15, 0, Math.PI * 2);
-    context.lineWidth = 3;
-    context.strokeStyle = "red"; // !
-    context.stroke();
-    context.closePath();
+    // context.beginPath();
+    // context.arc(185, 200, 15, 0, Math.PI * 2);
+    // context.lineWidth = 3;
+    // context.strokeStyle = "red"; // !
+    // context.stroke();
+    // context.closePath();
 
-    context.beginPath();
-    context.arc(400, 100, 15, 0, Math.PI * 2);
-    context.lineWidth = 3;
-    context.strokeStyle = "red"; // !
-    context.stroke();
-    context.closePath();
+    // context.beginPath();
+    // context.arc(400, 100, 15, 0, Math.PI * 2);
+    // context.lineWidth = 3;
+    // context.strokeStyle = "red"; // !
+    // context.stroke();
+    // context.closePath();
 
-    context.beginPath();
-    context.arc(400, 200, 15, 0, Math.PI * 2);
-    context.lineWidth = 3;
-    context.strokeStyle = "red"; // !
-    context.stroke();
-    context.closePath();
+    // context.beginPath();
+    // context.arc(400, 200, 15, 0, Math.PI * 2);
+    // context.lineWidth = 3;
+    // context.strokeStyle = "red"; // !
+    // context.stroke();
+    // context.closePath();
 
     }
 }
