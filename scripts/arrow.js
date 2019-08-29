@@ -18,23 +18,23 @@ class Arrow {
       event.preventDefault();
       if (event.keyCode === 37) {
         this.isMovingLeft = true
-        console.log("turn left");
+        //console.log("turn left");
       }
       if (event.keyCode === 39) {
         this.isMovingRight = true 
 
-        console.log("turn right");
+        //console.log("turn right");
       }
 
     });
     window.addEventListener('keyup', event => {
       if (event.keyCode === 37) {
         this.isMovingLeft = false
-        console.log('stop moving');
+        //console.log('stop moving');
       }
       if (event.keyCode === 39) {
         this.isMovingRight = false
-        console.log('stop moving');
+        //console.log('stop moving');
       }
 
       
@@ -83,9 +83,9 @@ class Arrow {
     //console.log("DEBUG update arrow")
     if(this.isMovingLeft) {
       this.angle-= 0.05
-      console.log("DEBUG moving left", this.angle)
+      //console.log("DEBUG moving left", this.angle)
     };
     if(this.isMovingRight) this.angle+= 0.05;
-    console.log("arrow update", this.angle)
+    //console.log("arrow update", this.angle)
   }
 }

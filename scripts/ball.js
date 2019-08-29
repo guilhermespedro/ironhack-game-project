@@ -9,7 +9,7 @@ class Ball {
     this.vx = 0;
     this.vy = 0;
     this.shoot = false;
-    this.ballSpeed = 40;
+    this.ballSpeed = 15;
     this.ballWith = 70;
     this.ballHeight = 60;
     //this.angle = game.arrow.angle
