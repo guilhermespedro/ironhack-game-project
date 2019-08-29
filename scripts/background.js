@@ -1,6 +1,8 @@
 class Background {
   constructor(game){
     this.game = game;
+    this.goalWidth = 500;
+    this.goalHeight = 200;
   }
   paint () {
     const context = this.game.context;
@@ -14,45 +16,6 @@ class Background {
     // context.lineTo(650, 250);
     // context.stroke();
     // context.closePath();
-    context.beginPath();
-    context.strokeRect(150, 50 , 500, 200);
-    context.closePath();
-
-
-    context.beginPath();
-    context.moveTo(150, 250);
-    context.lineTo(225, 175);
-    context.strokeStyle = "white";
-    context.stroke();
-    context.closePath();
-
-    context.beginPath();
-    context.moveTo(650, 250);
-    context.lineTo(725, 175);
-    context.strokeStyle = "white";
-    context.stroke();
-    context.closePath();
-
-    context.beginPath();
-    context.moveTo(225,175);
-    context.lineTo(725, 175);
-    context.strokeStyle = "black";
-    context.stroke();
-    context.closePath();
-
-    context.beginPath();
-    context.moveTo(225, 175);
-    context.lineTo(150, 50); 
-    context.strokeStyle = "white";
-    context.stroke();
-    context.closePath();
-
-    context.beginPath();
-    context.moveTo(725, 175);
-    context.lineTo(650, 50);
-    context.strokeStyle = "white";
-    context.stroke();
-    context.closePath();
 
     context.beginPath();
     context.moveTo(0, 250)

@@ -4,64 +4,60 @@ class Ball {
     this.game = game;
     this.image = new Image();
     this.image.src = '/images/hiclipart.com-id_iicww.png';
-    this.ballX = 370;
-    this.ballY = 480;
+    this.x = 370;
+    this.y = 480;
     this.vx = 0;
     this.vy = 0;
-    this.shoot = false;
+    this.shooting = false;
     this.ballSpeed = 15;
     this.ballWith = 70;
     this.ballHeight = 60;
-    //this.angle = game.arrow.angle
-
-
+    this.bindControls();
+  }
+  
+  bindControls () {
     window.addEventListener('keydown', event => {
       event.preventDefault();
-
       if (event.keyCode === 32) {
-        this.shoot = true
-        //shoot(ball);
-        console.log("SHOOT", this.game.arrow.angle);
+        this.shooting = true;
+        // console.log("SHOOT", this.game.arrow.angle);
       }
     });
-    window.addEventListener('keyup', event => {
-
-      if (event.keyCode === 32) {
-        this.stop = false
-        console.log('stop shooting');
-      }
-      
-    })
   
+    // window.addEventListener('keyup', event => {
+    //   if (event.keyCode === 32) {
+    //     // this.stop = false;
+    //     // console.log('stop shooting');
+    //   }
+    // })
   }
+
   paint() {
-    this.context.drawImage(this.image, this.ballX, this.ballY , 70, 60);
+    this.context.drawImage(this.image, this.x, this.y , 70, 60);
   }
+
   update() {
-    if(this.shoot) {
-    
-      this.vx = this.ballSpeed * Math.sin(this.game.arrow.angle);
-      this.vy = this.ballSpeed * Math.cos(this.game.arrow.angle)*-1;
-    this.ballX += this.vx;
-    this.ballY += this.vy;
+    // console.log(this.vy)
+    if(this.shooting) {
+      if (!this.vy) {
+        this.vx = this.ballSpeed * Math.sin(this.game.arrow.angle);
+        this.vy = this.ballSpeed * Math.cos(this.game.arrow.angle) * -1;
+      }
+      this.x += this.vx;
+      this.y += this.vy;
+      if (
+        this.y < -50 ||
+        this.y > this.game.canvas.height ||
+        this.x < 0 ||
+        this.x > this.game.canvas.width
+      ) {
+        this.shooting = false;
+        this.game.nextAttempt();
+      }
+    }
   }
-  }
-  stop() {
-    this.vx = 0;
-    this.vy = 0;
-  }
+
   isMoving () {
-    return this.vx !== 0 || this.vy !==0 
-  }
-  shoot() {
-    this.vx = this.ballSpeed * Math.sin(90);
-    this.vy = this.ballSpeed * Math.cos(90);
-  }
-  setToShoot(ball) {
-    this.ballX = this.width/2 + 100 * Math.sin(this.angle);
-    this.ballY = this.height - 100  * Math.cos(this.angle);
-  }
-  clear(){
-    context.clearRect(0,0,this.width, this.height);
+    return this.vx !== 0 || this.vy !==0;
   }
 }
