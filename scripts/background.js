@@ -4,16 +4,20 @@ class Background {
   }
   paint () {
     const context = this.game.context;
+    // context.beginPath();
+    // context.moveTo(150, 250);
+    // context.lineTo(150, 50);
+    // context.strokeStyle = "white";
+    // context.stroke();
+    // context.lineTo(650, 50);
+    // context.stroke();
+    // context.lineTo(650, 250);
+    // context.stroke();
+    // context.closePath();
     context.beginPath();
-    context.moveTo(150, 250);
-    context.lineTo(150, 50);
-    context.strokeStyle = "white";
-    context.stroke();
-    context.lineTo(650, 50);
-    context.stroke();
-    context.lineTo(650, 250);
-    context.stroke();
+    context.strokeRect(150, 50 , 500, 200);
     context.closePath();
+
 
     context.beginPath();
     context.moveTo(150, 250);

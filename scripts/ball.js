@@ -9,7 +9,9 @@ class Ball {
     this.vx = 0;
     this.vy = 0;
     this.shoot = false;
-    this.ballSpeed = 30
+    this.ballSpeed = 40;
+    this.ballWith = 70;
+    this.ballHeight = 60;
     //this.angle = game.arrow.angle
 
 
@@ -58,5 +60,8 @@ class Ball {
   setToShoot(ball) {
     this.ballX = this.width/2 + 100 * Math.sin(this.angle);
     this.ballY = this.height - 100  * Math.cos(this.angle);
+  }
+  clear(){
+    context.clearRect(0,0,this.width, this.height);
   }
 }
