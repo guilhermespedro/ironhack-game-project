@@ -11,8 +11,9 @@ class Game {
     this.SCORE_LINE_HEIGHT = 180;
     this.SPEED = 15;
     this.sound = new Sound();
+    this.scoreBoard = new ScoreBoard(this);
     //this.sound.loadSounds(SOUNDS);
-
+    this.score = 0
     this.audio = new Audio()
     this.audio.src = "/Sounds/331912__kevinvg207__wrong-buzzer.wav"
     this.callbacks = {
@@ -66,13 +67,11 @@ class Game {
       }
       if (ballCollidedWithKeeper)     {
         this.audio.play()
+        this.score--
+        console.log(this.score)
         console.log(this.audio)
         console.log('Ball colided with keeper');}
     }
-  }
-  goal() {
-    console.log("goal")
-    this.sound.play('goal', {volume: 1 });
   }
 
   paint() {
@@ -82,6 +81,7 @@ class Game {
     this.ball.paint();
     this.keeper.paint();
     this.arrow.paint();
+    this.scoreBoard.paint();
   }
 
   clear() {

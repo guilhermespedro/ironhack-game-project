@@ -4,8 +4,8 @@ class Ball {
     this.game = game;
     this.image = new Image();
     this.image.src = '/images/hiclipart.com-id_iicww.png';
-    // this.draw = new Draw();
-    // this.drawImage.src = '/images/hiclipart.com-id_iicww.png'
+    this.baseImage = new Image();
+    this.baseImage.src = '/images/imgbin-goal-football-football-goal-s-goal-soccer-illustration-NE6PVRqzEHeYLeWiKgT3DFsRS.jpg';
     this.x = 370;
     this.y = 480;
     this.vx = 0;
@@ -54,6 +54,7 @@ class Ball {
       ) {
         console.log("GOOOOL   ")
         this.shooting = false;
+        this.score++;
         this.game.nextAttempt();
       }
     }
@@ -63,8 +64,9 @@ class Ball {
       this.x > this.game.goal.verticalGap && 
       this.x < this.scoreWidth
       ){
+      this.game.score++
       this.sound.play('goal', {volume: 1 });
-      // this.drawImage.src ("/images/soccer-football-championship-background-vector-19627036.jpg");
+      // this.context.drawImage('/images/imgbin-goal-football-football-goal-s-goal-soccer-illustration-NE6PVRqzEHeYLeWiKgT3DFsRS.jpg', 100, 100);
 
       console.log("stoooop")
       console.log(this.x)
