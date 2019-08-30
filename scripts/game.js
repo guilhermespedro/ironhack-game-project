@@ -1,3 +1,7 @@
+const SOUNDS = {
+  goal : "/Sounds/36796__alexpadina__goal1.wav"
+}
+
 class Game {
   constructor(canvas) {
     this.canvas = canvas;
@@ -5,7 +9,9 @@ class Game {
     this.width = this.canvas.width;
     this.heigth = this.canvas.heigth;
     this.SCORE_LINE_HEIGHT = 180;
-    this.SPEED = 5;
+    this.SPEED = 15;
+    this.sound = new Sound();
+    this.sound.loadSounds(SOUNDS);
     this.callbacks = {
       left: () => this.arrow.isMovingLeft(),
       right: () => this.arrow.isMovingRight()
@@ -47,6 +53,7 @@ class Game {
     //this.paint();
     this.arrow.update();
     this.control.update();
+    this.ball.update();
     this.keeper.update();
     const ballCollidedWithGoal = this.goal.detectColision();
     if (ballCollidedWithGoal) {
@@ -56,6 +63,9 @@ class Game {
       }
       if (ballCollidedWithKeeper) console.log('Ball colided with keeper');
     }
+  }
+  goal() {
+    this.sound.play('goal', {volume: 1 });
   }
 
   paint() {

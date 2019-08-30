@@ -9,7 +9,7 @@ class Ball {
     this.vx = 0;
     this.vy = 0;
     this.shooting = false;
-    this.ballSpeed = 15;
+    this.ballSpeed = 5;
     this.ballWith = 70;
     this.ballHeight = 60;
     this.bindControls();
@@ -49,11 +49,31 @@ class Ball {
         this.y < -50 ||
         this.y > this.game.canvas.height ||
         this.x < 0 ||
-        this.x > this.game.canvas.width
+        this.x > this.game.canvas.width ||
+        this.y < this.game.SCORE_LINE_HEIGHT -70
       ) {
         this.shooting = false;
         this.game.nextAttempt();
       }
+    }
+    // if (
+    // this.game.SCORE_LINE_HEIGHT > this.y  
+    //   && this.y < this.game.goal.height
+    //   && this.game.goal.width > this.x
+    //   && this.x > this.game.goal.verticalGap ) { 
+    //   this.game.ballSpeed = 0
+    //   console.log("STOP" )
+    // }
+    if(this.game.SCORE_LINE_HEIGHT-70>this.y){
+      console.log("stoooop")
+      console.log(this.x)
+      this.ballSpeed = 0
+      this.game.SPEED = 0
+      //this.y = this.game.SCORE_LINE_HEIGHT-70
+      this.vy= 0
+      this.vx =0
+      // this.game.keeper.vx = 0
+      // this.game.keeper.vy = 0
     }
   }
 

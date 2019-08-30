@@ -41,9 +41,9 @@ class Keeper {
 
   paint() {
     let image;
-    if (this.x < 300) {
+    if (this.x < 250) {
       image = this.images.left;
-    } else if (this.x < 400) {
+    } else if (this.x < 350) {
       image = this.images.center;
     } else {
       image = this.images.right;
@@ -59,7 +59,7 @@ class Keeper {
   }
 
   update() {
-    if (this.x > 500) {
+    if (this.x > 400) {
       this.vx *= -1;
     } else if (this.x < 150) {
       this.vx *= -1;
