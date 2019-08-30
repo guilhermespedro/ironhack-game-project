@@ -10,6 +10,7 @@ class Ball {
     this.y = 480;
     this.vx = 0;
     this.vy = 0;
+    this.scoreWidth = 700;
     this.sound = new Audio();
     this.sound.src = "/Sounds/36796__alexpadina__goal1.wav"
     this.shooting = false;
@@ -60,7 +61,7 @@ class Ball {
     if (
       this.game.SCORE_LINE_HEIGHT-70>this.y && 
       this.x > this.game.goal.verticalGap && 
-      this.x < this.game.goal.width
+      this.x < this.scoreWidth
       ){
       this.sound.play('goal', {volume: 1 });
       // this.drawImage.src ("/images/soccer-football-championship-background-vector-19627036.jpg");
