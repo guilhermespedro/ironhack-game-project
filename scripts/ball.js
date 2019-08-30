@@ -4,10 +4,14 @@ class Ball {
     this.game = game;
     this.image = new Image();
     this.image.src = '/images/hiclipart.com-id_iicww.png';
+    // this.draw = new Draw();
+    // this.drawImage.src = '/images/hiclipart.com-id_iicww.png'
     this.x = 370;
     this.y = 480;
     this.vx = 0;
     this.vy = 0;
+    this.sound = new Audio();
+    this.sound.src = "/Sounds/36796__alexpadina__goal1.wav"
     this.shooting = false;
     this.ballSpeed = 5;
     this.ballWith = 70;
@@ -24,12 +28,7 @@ class Ball {
       }
     });
   
-    // window.addEventListener('keyup', event => {
-    //   if (event.keyCode === 32) {
-    //     // this.stop = false;
-    //     // console.log('stop shooting');
-    //   }
-    // })
+
   }
 
   paint() {
@@ -52,28 +51,26 @@ class Ball {
         this.x > this.game.canvas.width ||
         this.y < this.game.SCORE_LINE_HEIGHT -70
       ) {
+        console.log("GOOOOL   ")
         this.shooting = false;
         this.game.nextAttempt();
       }
     }
-    // if (
-    // this.game.SCORE_LINE_HEIGHT > this.y  
-    //   && this.y < this.game.goal.height
-    //   && this.game.goal.width > this.x
-    //   && this.x > this.game.goal.verticalGap ) { 
-    //   this.game.ballSpeed = 0
-    //   console.log("STOP" )
-    // }
-    if(this.game.SCORE_LINE_HEIGHT-70>this.y){
+
+    if (
+      this.game.SCORE_LINE_HEIGHT-70>this.y && 
+      this.x > this.game.goal.verticalGap && 
+      this.x < this.game.goal.width
+      ){
+      this.sound.play('goal', {volume: 1 });
+      // this.drawImage.src ("/images/soccer-football-championship-background-vector-19627036.jpg");
+
       console.log("stoooop")
       console.log(this.x)
       this.ballSpeed = 0
       this.game.SPEED = 0
-      //this.y = this.game.SCORE_LINE_HEIGHT-70
       this.vy= 0
       this.vx =0
-      // this.game.keeper.vx = 0
-      // this.game.keeper.vy = 0
     }
   }
 
